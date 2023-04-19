@@ -9,13 +9,13 @@ import CardMedia from '@mui/material/CardMedia';
 export interface MealCardProps {
     name: string;
     category: string;
-    area: string;
     image: string;
+    tags: string;
     // @ts-ignore
     onClick: fn;
 }
 
-const MealCard: FC<MealCardProps> = ({name, category, area, image, onClick}) => {
+const MealCard: FC<MealCardProps> = ({name, category, tags, image, onClick}) => {
     return (
         <Card sx={styles.card} onClick={onClick}>
             <CardActionArea>
@@ -33,7 +33,7 @@ const MealCard: FC<MealCardProps> = ({name, category, area, image, onClick}) => 
                         Category: {category}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Area: {area}
+                        {tags?.split(',').join(' | ')}
                     </Typography>
                 </CardContent>
             </CardActionArea>
