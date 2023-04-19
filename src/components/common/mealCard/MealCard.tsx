@@ -1,6 +1,6 @@
 import {CardActionArea, Typography} from "@mui/material";
 import React, {FC} from "react";
-import * as styles from './MealCard.styles';
+import {card} from './MealCard.styles';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -15,30 +15,28 @@ export interface MealCardProps {
     onClick: fn;
 }
 
-const MealCard: FC<MealCardProps> = ({name, category, tags, image, onClick}) => {
-    return (
-        <Card sx={styles.card} onClick={onClick}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="140"
-                    image={image}
-                    alt={name}
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Category: {category}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {tags?.split(',').join(' | ')}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
-    );
-};
+const MealCard: FC<MealCardProps> = ({name, category, tags, image, onClick}) => (
+    <Card sx={card} onClick={onClick}>
+        <CardActionArea>
+            <CardMedia
+                component="img"
+                height="140"
+                image={image}
+                alt={name}
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                    {name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    Category: {category}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                    {tags?.split(',').join(' | ')}
+                </Typography>
+            </CardContent>
+        </CardActionArea>
+    </Card>
+);
 
 export default MealCard;
