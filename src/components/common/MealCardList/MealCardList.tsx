@@ -1,6 +1,6 @@
 import {Box, Typography} from "@mui/material";
 import React, {FC, useState} from "react";
-import MealCard from "@/components/common/mealCard/MealCard";
+import MealCard from "@/components/common/MealCard/MealCard";
 import {listLayout, upperLayout} from "@/components/common/MealCardList/MealCardList.styles";
 import ListController from "@/components/common/ListController/ListController";
 
