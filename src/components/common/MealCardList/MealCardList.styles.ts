@@ -8,3 +8,9 @@ export const listLayout: SxProps<Theme> = {
     paddingTop: '16px',
     paddingBottom: '16px',
 };
+
+export const upperLayout: SxProps<Theme> = {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+};
