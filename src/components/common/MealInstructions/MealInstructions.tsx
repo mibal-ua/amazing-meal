@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {Box, List, ListItem, ListItemText, Typography} from "@mui/material";
-import {element, layout} from "@/components/common/MealInstructions/MealInstructions.styles";
+import {block, layout, rightPart, leftPart} from "@/components/common/MealInstructions/MealInstructions.styles";
 import VideoPlayer from "@/components/common/MealVideoGuide/VideoPlayer";
 
 export interface MealInstructionsProps {
@@ -58,7 +58,7 @@ const MealInstructions: FC<MealInstructionsProps> = ({instructions, ingredients,
 
     return (
         <Box sx={layout}>
-            <Box>
+            <Box sx={leftPart}>
                 <Typography variant='h4'>Інгредієнти:</Typography>
                 <List>
                     {ingredientsVals.map((value, index) => (
@@ -67,13 +67,15 @@ const MealInstructions: FC<MealInstructionsProps> = ({instructions, ingredients,
                         </ListItem>))}
                 </List>
             </Box>
-            <Box sx={element}>
-                <Typography variant='h4'>Інструкція</Typography>
-                <Typography variant='body1'>{instructions}</Typography>
-            </Box>
-            <Box sx={element}>
-                <Typography variant='h4'>Відео-гайд</Typography>
-                <VideoPlayer source={video}/>
+            <Box sx={rightPart}>
+                <Box sx={block}>
+                    <Typography variant='h4'>Інструкція</Typography>
+                    <Typography width='matching-parent' variant='body1'>{instructions}</Typography>
+                </Box>
+                <Box sx={block}>
+                    <Typography variant='h4'>Відео-гайд</Typography>
+                    <VideoPlayer source={video}/>
+                </Box>
             </Box>
         </Box>
     );
