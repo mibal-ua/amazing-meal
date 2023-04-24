@@ -1,6 +1,5 @@
 import React, {FC} from "react";
 import {Box, Typography} from "@mui/material";
-import Image from "next/image";
 import {layout} from "@/components/common/MealInfo/MealInfo.styles";
 
 export interface MealInfoProps {
@@ -13,13 +12,13 @@ export interface MealInfoProps {
 const MealInfo: FC<MealInfoProps> = ({name, image, category, tags}) => (
     <Box sx={layout}>
         <Box component="img"
-            sx={{
-                height: 280,
-                width: 280,
-                borderRadius: '6px',
-            }}
-            alt='photo'
-            src={image}
+             sx={{
+                 height: 280,
+                 width: 280,
+                 borderRadius: '6px',
+             }}
+             alt='photo'
+             src={image}
         />
         <Box sx={{
             display: 'flex',

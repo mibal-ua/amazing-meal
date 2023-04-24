@@ -170,7 +170,8 @@ const MealPage = () => {
     return (
         <Box sx={pageWrapper}>
             <MealInfo key={idMeal} name={strMeal} image={strMealThumb} category={strCategory} tags={strTags}/>
-            <MealInstructions instructions={strInstructions} ingredients={ingredients} measures={measures} video={strYoutube}/>
+            <MealInstructions instructions={strInstructions} ingredients={ingredients} measures={measures}
+                              video={strYoutube}/>
         </Box>
     );
 };

@@ -1,6 +1,5 @@
-import React, {FC, useEffect, useRef} from "react";
+import React, {FC} from "react";
 import Hls from 'hls.js';
-import {useDispatch} from "react-redux";
 
 export interface VideoPlayerProps {
     source: string,
@@ -20,12 +19,12 @@ const VideoPlayer: FC<VideoPlayerProps> = ({source}) => {
     }, [hls, source]);
 
     return (
-            <video
-                controls={true}
-                ref={videoEl}
-                autoPlay={false}
-                muted={true}
-            />
+        <video
+            controls={true}
+            ref={videoEl}
+            autoPlay={false}
+            muted={true}
+        />
     );
 };
 
