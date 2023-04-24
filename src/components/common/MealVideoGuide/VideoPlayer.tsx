@@ -1,12 +1,13 @@
 import React, {FC} from "react";
 import Hls from 'hls.js';
+import {videoPlayer} from "@/components/common/MealVideoGuide/MealVideoGuide.styles";
+import {Box} from "@mui/material";
 
 export interface VideoPlayerProps {
     source: string,
 }
 
 const VideoPlayer: FC<VideoPlayerProps> = ({source}) => {
-    source = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'; // because of YouTube CORS politics
     const hls = new Hls();
     const videoEl = React.useRef<HTMLVideoElement>(null);
     React.useEffect(() => {
@@ -18,13 +19,16 @@ const VideoPlayer: FC<VideoPlayerProps> = ({source}) => {
         }
     }, [hls, source]);
 
+    source = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'; // because of YouTube CORS politics
     return (
-        <video
-            controls={true}
-            ref={videoEl}
-            autoPlay={false}
-            muted={true}
-        />
+        <Box sx={videoPlayer}>
+            <video
+                width={'100%'}
+                controls={true}
+                ref={videoEl}
+                autoPlay={false}
+            />
+        </Box>
     );
 };
 
