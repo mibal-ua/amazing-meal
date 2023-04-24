@@ -69,7 +69,7 @@ const MealInstructions: FC<MealInstructionsProps> = ({instructions, ingredients,
             </Box>
             <Box sx={rightPart}>
                 <Box sx={block}>
-                    <Typography variant='h4'>Інструкція</Typography>
+                    <Typography variant='h4'>Інструкція:</Typography>
                     <Typography width='matching-parent' variant='body1'>{instructions}</Typography>
                 </Box>
                 <Box sx={block}>
