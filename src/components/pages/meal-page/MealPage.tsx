@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, CircularProgress} from "@mui/material";
+import {Box, CircularProgress, Typography} from "@mui/material";
 import {useQuery} from "react-query";
 import MealService from "@/services/meal.service";
 import {useRouter} from "next/router";
@@ -73,6 +73,14 @@ const MealPage = () => {
         </Box>
     );
 
+    const currentMeal = data?.meals[0] as MealFullInfo;
+
+    if (!currentMeal) {
+        return (<Box sx={pageWrapper}>
+            <Typography>Нічого немає(</Typography>
+        </Box>);
+    }
+
     const {
         idMeal,
         strMeal,
@@ -121,7 +129,7 @@ const MealPage = () => {
         strMeasure18,
         strMeasure19,
         strMeasure20,
-    } = data?.meals[0] as MealFullInfo;
+    } = currentMeal;
 
     const ingredients = {
         strIngredient1,
