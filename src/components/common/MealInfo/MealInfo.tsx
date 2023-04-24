@@ -1,6 +1,11 @@
 import React, {FC} from "react";
 import {Box, Typography} from "@mui/material";
-import {layout} from "@/components/common/MealInfo/MealInfo.styles";
+import {
+    blockLayout,
+    imageStyle,
+    textLayout,
+    secondaryText
+} from "@/components/common/MealInfo/MealInfo.styles";
 
 export interface MealInfoProps {
     name: string,
@@ -10,24 +15,16 @@ export interface MealInfoProps {
 }
 
 const MealInfo: FC<MealInfoProps> = ({name, image, category, tags}) => (
-    <Box sx={layout}>
+    <Box sx={blockLayout}>
         <Box component="img"
-             sx={{
-                 height: 280,
-                 width: 280,
-                 borderRadius: '6px',
-             }}
+             sx={imageStyle}
              alt='photo'
              src={image}
         />
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '8px'
-        }}>
-            <Typography variant='h2'>{name}</Typography>
-            <Typography variant='h4'>Category: {category}</Typography>
-            <Typography variant='h5'>{tags.split(',').join(' | ')}</Typography>
+        <Box sx={textLayout}>
+            <Typography variant='h3'>{name}</Typography>
+            <Typography variant='h5' sx={secondaryText} >{tags.split(',').join(' | ')}</Typography>
+            <Typography variant='h5' sx={secondaryText} >Category: {category}</Typography>
         </Box>
 
     </Box>
