@@ -2,7 +2,7 @@ import {SxProps} from "@mui/system";
 import {Theme} from "@mui/material";
 
 export const pageWrapper: SxProps<Theme> = {
-    paddingTop: '32px',
+    paddingTop: '16px',
     paddingLeft: '128px',
     paddingRight: '128px',
     paddingDown: '32px',
