@@ -5,6 +5,10 @@ export const pageWrapper: SxProps<Theme> = {
     paddingTop: '32px',
     paddingLeft: '128px',
     paddingRight: '128px',
+    paddingDown: '32px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '20px'
 };
 
 export const loadingWrapper: SxProps<Theme> = {
