@@ -12,11 +12,9 @@ export interface ListControllerProps {
 const ListController: FC<ListControllerProps> = ({pageCount, current, onChange}) => {
     const buttons = [];
     for (let i = 1; i <= pageCount; i++) {
-        if (i === current) {
-            buttons.push(<Button variant={'contained'} key={i} onClick={() => onChange(i)}>{i}</Button>);
-        } else {
-            buttons.push(<Button key={i} onClick={() => onChange(i)}>{i}</Button>);
-        }
+        buttons.push(
+            <Button variant={i === current ? 'contained' : 'text'}
+                    key={i} onClick={() => onChange(i)}>{i}</Button>);
     }
     return (
         <Box sx={controllerLayout}>
