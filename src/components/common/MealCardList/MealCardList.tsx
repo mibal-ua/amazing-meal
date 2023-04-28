@@ -3,15 +3,10 @@ import React, {FC, useState} from "react";
 import MealCard from "@/components/common/MealCard/MealCard";
 import {listLayout, upperLayout} from "@/components/common/MealCardList/MealCardList.styles";
 import ListController from "@/components/common/ListController/ListController";
+import {Meal} from "@/types/services";
 
-export interface MealCardListLayoutProps {
-    list: {
-        idMeal: string,
-        strMeal: string,
-        strCategory: string,
-        strMealThumb: string,
-        strTags: string
-    }[] | undefined,
+interface MealCardListLayoutProps {
+    list: Meal[] | undefined,
 }
 
 const PAGE_ELEMENT_COUNT = 10;
@@ -40,8 +35,7 @@ const MealCardList: FC<MealCardListLayoutProps> = ({list}) => {
             {list.slice(start, end)
                 .map(({idMeal, strMeal, strCategory, strMealThumb, strTags}, index) =>
                     <MealCard key={idMeal} name={strMeal} category={strCategory} image={strMealThumb}
-                              tags={strTags}
-                              onClick={() => window.open(`/${idMeal}`)}/>)}
+                              tags={strTags} onClick={() => window.open(`/${idMeal}`)}/>)}
         </Box>
     </>);
 };
