@@ -3,7 +3,7 @@ import {Box, List, ListItem, ListItemText, Typography} from '@mui/material';
 import {block, layout, rightPart, leftPart} from '@/components/common/MealInstructions/MealInstructions.styles';
 import VideoPlayer from '@/components/common/MealVideoGuide/VideoPlayer';
 
-export interface MealInstructionsProps {
+interface MealInstructionsProps {
     instructions: string,
     ingredients: string[],
     measures: string[],

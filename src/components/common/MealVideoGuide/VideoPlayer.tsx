@@ -3,7 +3,7 @@ import Hls from 'hls.js';
 import {videoPlayer} from '@/components/common/MealVideoGuide/VideoPlayer.styles';
 import {Box} from '@mui/material';
 
-export interface VideoPlayerProps {
+interface VideoPlayerProps {
     source: string,
 }
 

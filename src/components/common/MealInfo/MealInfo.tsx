@@ -7,7 +7,7 @@ import {
     secondaryText
 } from '@/components/common/MealInfo/MealInfo.styles';
 
-export interface MealInfoProps {
+interface MealInfoProps {
     name: string,
     image: string,
     category: string,
