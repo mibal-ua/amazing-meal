@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {Box, List, ListItem, ListItemText, Typography} from '@mui/material';
 import {block, layout, rightPart, leftPart} from '@/components/common/MealInstructions/MealInstructions.styles';
-import VideoPlayer from '@/components/common/MealVideoGuide/VideoPlayer';
+import VideoPlayer from '@/components/common/VideoPlayer/VideoPlayer';
 
 interface MealInstructionsProps {
     instructions: string,
