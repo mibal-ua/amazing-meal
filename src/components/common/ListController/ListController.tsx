@@ -9,18 +9,13 @@ export interface ListControllerProps {
     onChange: fn,
 }
 
-const ListController: FC<ListControllerProps> = ({pageCount, current, onChange}) => {
-    const buttons = [];
-    for (let i = 1; i <= pageCount; i++) {
-        buttons.push(
-            <Button variant={i === current ? 'contained' : 'text'}
-                    key={i} onClick={() => onChange(i)}>{i}</Button>);
-    }
-    return (
-        <Box sx={controllerLayout}>
-            {buttons}
-        </Box>
-    );
-};
+const ListController: FC<ListControllerProps> = ({pageCount, current, onChange}) => (
+    <Box sx={controllerLayout}>
+        {new Array<JSX.Element>(pageCount).fill(<></>)
+            .map((el, i) =>
+                <Button variant={i + 1 === current ? 'contained' : 'text'}
+                        key={i} onClick={() => onChange(i + 1)}>{i + 1}</Button>)}
+    </Box>
+);
 
 export default ListController;
