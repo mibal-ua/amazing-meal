@@ -1,7 +1,6 @@
 import instance from '@/services/instance';
 import {getAllMealsDTO, getCurrentMealDTO} from '@/types/services';
 
-
 class Meal {
 
     getAllMeals = async (): Promise<getAllMealsDTO> => {
