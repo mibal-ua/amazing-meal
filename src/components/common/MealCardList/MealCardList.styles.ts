@@ -1,5 +1,5 @@
-import {SxProps} from "@mui/system";
-import {Theme} from "@mui/material";
+import {SxProps} from '@mui/system';
+import {Theme} from '@mui/material';
 
 export const listLayout: SxProps<Theme> = {
     display: 'grid',

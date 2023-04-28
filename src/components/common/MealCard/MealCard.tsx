@@ -1,5 +1,5 @@
-import {CardActionArea, Typography} from "@mui/material";
-import React, {FC} from "react";
+import {CardActionArea, Typography} from '@mui/material';
+import React, {FC} from 'react';
 import {card} from './MealCard.styles';
 
 import Card from '@mui/material/Card';
@@ -19,19 +19,19 @@ const MealCard: FC<MealCardProps> = ({name, category, tags, image, onClick}) => 
     <Card sx={card} onClick={onClick}>
         <CardActionArea>
             <CardMedia
-                component="img"
-                height="140"
+                component='img'
+                height='140'
                 image={image}
                 alt={name}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant='h5' component='div'>
                     {name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant='body2' color='text.secondary'>
                     Category: {category}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant='body2' color='text.secondary'>
                     {tags?.split(',').join(' | ')}
                 </Typography>
             </CardContent>

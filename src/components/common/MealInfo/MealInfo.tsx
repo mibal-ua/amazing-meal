@@ -1,11 +1,11 @@
-import React, {FC} from "react";
-import {Box, Typography} from "@mui/material";
+import React, {FC} from 'react';
+import {Box, Typography} from '@mui/material';
 import {
     blockLayout,
     imageStyle,
     textLayout,
     secondaryText
-} from "@/components/common/MealInfo/MealInfo.styles";
+} from '@/components/common/MealInfo/MealInfo.styles';
 
 export interface MealInfoProps {
     name: string,
@@ -16,7 +16,7 @@ export interface MealInfoProps {
 
 const MealInfo: FC<MealInfoProps> = ({name, image, category, tags}) => (
     <Box sx={blockLayout}>
-        <Box component="img"
+        <Box component='img'
              sx={imageStyle}
              alt='photo'
              src={image}

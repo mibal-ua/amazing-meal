@@ -1,6 +1,6 @@
-import React, {FC} from "react";
-import {Box, Button} from "@mui/material";
-import {controllerLayout} from "@/components/common/ListController/ListController.styles";
+import React, {FC} from 'react';
+import {Box, Button} from '@mui/material';
+import {controllerLayout} from '@/components/common/ListController/ListController.styles';
 
 export interface ListControllerProps {
     pageCount: number,

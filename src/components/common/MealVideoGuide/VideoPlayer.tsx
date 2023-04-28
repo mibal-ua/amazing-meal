@@ -1,7 +1,7 @@
-import React, {FC} from "react";
+import React, {FC} from 'react';
 import Hls from 'hls.js';
-import {videoPlayer} from "@/components/common/MealVideoGuide/VideoPlayer.styles";
-import {Box} from "@mui/material";
+import {videoPlayer} from '@/components/common/MealVideoGuide/VideoPlayer.styles';
+import {Box} from '@mui/material';
 
 export interface VideoPlayerProps {
     source: string,
