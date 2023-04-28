@@ -14,7 +14,9 @@ const PAGE_ELEMENT_COUNT = 10;
 const MealCardList: FC<MealCardListLayoutProps> = ({list}) => {
     if (!list) {
         return (<>
-            <Typography variant='h2'>Страви</Typography>
+            <Box sx={upperLayout}>
+                <Typography variant='h2'>Страви</Typography>
+            </Box>
             <Box sx={listLayout}>
                 <Typography variant='h4'>Пустий список(</Typography>
             </Box>
