@@ -7,6 +7,7 @@ import MealInfo from '@/components/common/MealInfo/MealInfo';
 import {loadingWrapper, pageWrapper} from '@/components/pages/meal-page/MealPage.styles';
 import MealInstructions from '@/components/common/MealInstructions/MealInstructions';
 import {Meal} from '@/types/services';
+import Head from 'next/head';
 
 const sliceObjIntoArrays = (srcObj: object, length: number) => {
     const src: string[] = Object.values(srcObj);
@@ -26,18 +27,27 @@ const MealPage = () => {
         () => MealService.getCurrentMeal(mealId),
     );
 
-    if (isLoading || isError) return (
+    if (isLoading || isError) return (<>
+        <Head>
+            <title>Loading...</title>
+            <link rel='shortcut icon' href='/chicken.png' />
+        </Head>
         <Box sx={loadingWrapper}>
             <CircularProgress size={100}/>
         </Box>
-    );
+    </>);
 
     const meal = data?.meals?.[0] as Meal;
-    if (!meal) {
-        return (<Box sx={pageWrapper}>
+    if (!meal) return (<>
+        <Head>
+            <title>Oops(</title>
+            <link rel='shortcut icon' href='/chicken.png' />
+        </Head>
+        <Box sx={pageWrapper}>
             <Typography variant='h4' align='center'>Такої їжі немає(</Typography>
-        </Box>);
-    }
+        </Box>
+    </>);
+
 
     const {
         idMeal,
@@ -51,13 +61,17 @@ const MealPage = () => {
         ...rest
     } = meal;
     const {ingredients, measures} = sliceObjIntoArrays(rest, 20);
-    return (
+    return (<>
+        <Head>
+            <title>{strMeal}</title>
+            <link rel='shortcut icon' href='/chicken.png' />
+        </Head>
         <Box sx={pageWrapper}>
             <MealInfo key={idMeal} name={strMeal} image={strMealThumb} category={strCategory} tags={strTags}/>
             <MealInstructions instructions={strInstructions} ingredients={ingredients} measures={measures}
                               video={strYoutube}/>
         </Box>
-    );
+    </>);
 };
 
 export default MealPage;
