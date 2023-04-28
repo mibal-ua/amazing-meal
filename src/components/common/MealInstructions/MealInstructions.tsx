@@ -53,17 +53,17 @@ export interface MealInstructionsProps {
 }
 
 const MealInstructions: FC<MealInstructionsProps> = ({instructions, ingredients, measures, video}) => {
-    const ingredientsVals = Object.values(ingredients).filter((val) => val);
-    const measuresVals = Object.values(measures).filter((val) => val);
+    const ingredientsValues = Object.values(ingredients).filter((val) => val);
+    const measuresValues = Object.values(measures).filter((val) => val);
 
     return (
         <Box sx={layout}>
             <Box sx={leftPart}>
                 <Typography variant='h4'>Інгредієнти:</Typography>
                 <List>
-                    {ingredientsVals.map((value, index) => (
+                    {ingredientsValues.map((value, index) => (
                         <ListItem key={value}>
-                            <ListItemText primary={`${index + 1}. ${value} (${measuresVals[index]})`}/>
+                            <ListItemText primary={`${index + 1}. ${value} (${measuresValues[index]})`}/>
                         </ListItem>))}
                 </List>
             </Box>
