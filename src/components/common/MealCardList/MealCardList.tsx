@@ -20,20 +20,21 @@ const MealCardList: FC<MealCardListLayoutProps> = ({list}) => {
             </Box>
         </>);
     }
-    const [state, setState] = useState(1);
 
+    const [currentPage, setCurrentPage] = useState(1);
     const pageCount = Math.ceil(list.length / PAGE_ELEMENT_COUNT);
 
-    const start = PAGE_ELEMENT_COUNT * (state - 1);
+    const start = PAGE_ELEMENT_COUNT * (currentPage - 1);
     const end = start + PAGE_ELEMENT_COUNT;
     return (<>
         <Box sx={upperLayout}>
             <Typography variant='h2'>Страви</Typography>
-            <ListController pageCount={pageCount} current={state} onChange={(number: number) => setState(number)}/>
+            <ListController pageCount={pageCount} current={currentPage}
+                            onChange={(number: number) => setCurrentPage(number)}/>
         </Box>
         <Box sx={listLayout}>
             {list.slice(start, end)
-                .map(({idMeal, strMeal, strCategory, strMealThumb, strTags}, index) =>
+                .map(({idMeal, strMeal, strCategory, strMealThumb, strTags}) =>
                     <MealCard key={idMeal} name={strMeal} category={strCategory} image={strMealThumb}
                               tags={strTags} onClick={() => window.open(`/${idMeal}`)}/>)}
         </Box>
