@@ -7,7 +7,7 @@ export const layout: SxProps<Theme> = {
     boxShadow: '0px 5px 11px rgba(0, 0, 0, 0.1)',
     display: 'flex',
     flexDirection: 'row',
-    gap: '64px'
+    gap: '28px'
 };
 
 export const block: SxProps<Theme> = {
