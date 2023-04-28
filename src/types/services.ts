@@ -54,4 +54,5 @@ export interface Meal {
     strMeasure18: string,
     strMeasure19: string,
     strMeasure20: string,
+    strArea: string, //ignored, but should be
 }
