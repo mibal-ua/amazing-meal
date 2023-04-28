@@ -7,7 +7,7 @@ export const layout: SxProps<Theme> = {
     boxShadow: '0px 5px 11px rgba(0, 0, 0, 0.1)',
     display: 'flex',
     flexDirection: "row",
-    gap: '36px'
+    gap: '64px'
 };
 
 export const block: SxProps<Theme> = {
@@ -23,5 +23,5 @@ export const rightPart: SxProps<Theme> = {
 };
 
 export const leftPart: SxProps<Theme> = {
-    minWidth: '260px',
+    minWidth: '320px',
 };
