@@ -38,7 +38,7 @@ const MealCardList: FC<MealCardListLayoutProps> = ({list}) => {
             {list.slice(start, end)
                 .map(({idMeal, strMeal, strCategory, strMealThumb, strTags}) =>
                     <MealCard key={idMeal} name={strMeal} category={strCategory} image={strMealThumb}
-                              tags={strTags} onClick={() => window.open(`/${idMeal}`)}/>)}
+                              tags={strTags} link={`/${idMeal}`} />)}
         </Box>
     </>);
 };

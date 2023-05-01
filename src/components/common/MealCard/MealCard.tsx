@@ -11,13 +11,12 @@ interface MealCardProps {
     category: string;
     image: string;
     tags: string;
-    // @ts-ignore
-    onClick: fn;
+    link: string,
 }
 
-const MealCard: FC<MealCardProps> = ({name, category, tags, image, onClick}) => (
-    <Card sx={card} onClick={onClick}>
-        <CardActionArea>
+const MealCard: FC<MealCardProps> = ({name, category, tags, image, link}) => (
+    <Card sx={card} >
+        <CardActionArea href={link}>
             <CardMedia
                 component='img'
                 height='140'
