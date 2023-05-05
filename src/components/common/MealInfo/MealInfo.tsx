@@ -16,7 +16,7 @@ const MealInfo: FC<MealInfoProps> = ({ name, image, category, tags }) => (
         <Box sx={styles.textLayout}>
             <Typography variant="h3">{name}</Typography>
             <Typography variant="h5" sx={styles.secondaryText}>
-                {tags.split(",").join(" | ")}
+                {tags?.split(",").join(" | ")}
             </Typography>
             <Typography variant="h5" sx={styles.secondaryText}>
                 Category: {category}
