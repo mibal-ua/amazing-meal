@@ -1,6 +1,7 @@
-import React, {FC} from 'react';
-import {Box, Button} from '@mui/material';
-import {controllerLayout} from '@/components/common/ListController/ListController.styles';
+import React, { FC } from "react";
+import { Box, Button } from "@mui/material";
+
+import { controllerLayout } from "@/components/common/ListController/ListController.styles";
 
 interface ListControllerProps {
     pageCount: number,
@@ -9,12 +10,12 @@ interface ListControllerProps {
     onChange: fn,
 }
 
-const ListController: FC<ListControllerProps> = ({pageCount, current, onChange}) => (
+const ListController: FC<ListControllerProps> = ({ pageCount, current, onChange }) => (
     <Box sx={controllerLayout}>
         {new Array<JSX.Element>(pageCount).fill(<></>)
             .map((el, i) =>
-                <Button variant={i + 1 === current ? 'contained' : 'text'}
-                        key={i} onClick={() => onChange(i + 1)}>{i + 1}</Button>)}
+                <Button variant={i + 1 === current ? "contained" : "text"}
+                    key={i} onClick={() => onChange(i + 1)}>{i + 1}</Button>)}
     </Box>
 );
 

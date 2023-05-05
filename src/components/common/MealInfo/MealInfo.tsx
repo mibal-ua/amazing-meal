@@ -1,32 +1,32 @@
-import React, {FC} from 'react';
-import {Box, Typography} from '@mui/material';
+import React, { FC } from "react";
+import { Box, Typography } from "@mui/material";
+
 import {
     blockLayout,
     imageStyle,
+    secondaryText,
     textLayout,
-    secondaryText
-} from '@/components/common/MealInfo/MealInfo.styles';
+} from "@/components/common/MealInfo/MealInfo.styles";
 
 interface MealInfoProps {
-    name: string,
-    image: string,
-    category: string,
-    tags: string,
+    name: string;
+    image: string;
+    category: string;
+    tags: string;
 }
 
-const MealInfo: FC<MealInfoProps> = ({name, image, category, tags}) => (
+const MealInfo: FC<MealInfoProps> = ({ name, image, category, tags }) => (
     <Box sx={blockLayout}>
-        <Box component='img'
-             sx={imageStyle}
-             alt='photo'
-             src={image}
-        />
+        <Box component="img" sx={imageStyle} alt="photo" src={image} />
         <Box sx={textLayout}>
-            <Typography variant='h3'>{name}</Typography>
-            <Typography variant='h5' sx={secondaryText} >{tags.split(',').join(' | ')}</Typography>
-            <Typography variant='h5' sx={secondaryText} >Category: {category}</Typography>
+            <Typography variant="h3">{name}</Typography>
+            <Typography variant="h5" sx={secondaryText}>
+                {tags.split(",").join(" | ")}
+            </Typography>
+            <Typography variant="h5" sx={secondaryText}>
+                Category: {category}
+            </Typography>
         </Box>
-
     </Box>
 );
 

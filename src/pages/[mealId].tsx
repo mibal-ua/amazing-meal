@@ -1,4 +1,5 @@
 import React from 'react';
+
 import MealPage from '@/components/pages/meal-page';
 
 const Meal = () => {

@@ -1,1 +1,1 @@
-export {default} from './MealInstructions';
+export { default } from "./MealInstructions";

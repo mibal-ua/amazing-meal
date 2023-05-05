@@ -1,8 +1,8 @@
-import {SxProps} from '@mui/system';
-import {Theme} from '@mui/material';
+import { Theme } from "@mui/material";
+import { SxProps } from "@mui/system";
 
 export const controllerLayout: SxProps<Theme> = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
 };
