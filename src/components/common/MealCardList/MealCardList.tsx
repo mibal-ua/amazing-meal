@@ -3,10 +3,7 @@ import { Box, Typography } from "@mui/material";
 
 import ListController from "@/components/common/ListController/ListController";
 import MealCard from "@/components/common/MealCard/MealCard";
-import {
-    listLayout,
-    upperLayout,
-} from "@/components/common/MealCardList/MealCardList.styles";
+import * as styles from "@/components/common/MealCardList/MealCardList.styles";
 import { Meal } from "@/types/services";
 
 interface MealCardListLayoutProps {
@@ -19,10 +16,10 @@ const MealCardList: FC<MealCardListLayoutProps> = ({ list }) => {
     if (!list) {
         return (
             <>
-                <Box sx={upperLayout}>
+                <Box sx={styles.upperLayout}>
                     <Typography variant="h2">Страви</Typography>
                 </Box>
-                <Box sx={listLayout}>
+                <Box sx={styles.listLayout}>
                     <Typography variant="h4">Пустий список(</Typography>
                 </Box>
             </>
@@ -36,7 +33,7 @@ const MealCardList: FC<MealCardListLayoutProps> = ({ list }) => {
     const end = start + PAGE_ELEMENT_COUNT;
     return (
         <>
-            <Box sx={upperLayout}>
+            <Box sx={styles.upperLayout}>
                 <Typography variant="h2">Страви</Typography>
                 <ListController
                     pageCount={pageCount}
@@ -44,7 +41,7 @@ const MealCardList: FC<MealCardListLayoutProps> = ({ list }) => {
                     onChange={(number: number) => setCurrentPage(number)}
                 />
             </Box>
-            <Box sx={listLayout}>
+            <Box sx={styles.listLayout}>
                 {list
                     .slice(start, end)
                     .map(({ idMeal, strMeal, strCategory, strMealThumb, strTags }) => (

@@ -1,12 +1,7 @@
 import React, { FC } from "react";
 import { Box, List, ListItem, ListItemText, Typography } from "@mui/material";
 
-import {
-    block,
-    layout,
-    leftPart,
-    rightPart,
-} from "@/components/common/MealInstructions/MealInstructions.styles";
+import * as styles from "@/components/common/MealInstructions/MealInstructions.styles";
 import VideoPlayer from "@/components/common/VideoPlayer";
 
 interface MealInstructionsProps {
@@ -26,8 +21,8 @@ const MealInstructions: FC<MealInstructionsProps> = ({
     const filteredMeasures = measures.filter((val) => val);
 
     return (
-        <Box sx={layout}>
-            <Box sx={leftPart}>
+        <Box sx={styles.layout}>
+            <Box sx={styles.leftPart}>
                 <Typography variant="h4">Інгредієнти:</Typography>
                 <List>
                     {filteredIngredients.map((value, index) => (
@@ -39,14 +34,14 @@ const MealInstructions: FC<MealInstructionsProps> = ({
                     ))}
                 </List>
             </Box>
-            <Box sx={rightPart}>
-                <Box sx={block}>
+            <Box sx={styles.rightPart}>
+                <Box sx={styles.block}>
                     <Typography variant="h4">Інструкція:</Typography>
                     <Typography width="matching-parent" variant="body1">
                         {instructions}
                     </Typography>
                 </Box>
-                <Box sx={block}>
+                <Box sx={styles.block}>
                     <Typography variant="h4">Відео-гайд</Typography>
                     <VideoPlayer source={video} />
                 </Box>

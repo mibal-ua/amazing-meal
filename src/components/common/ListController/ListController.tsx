@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Box, Button } from "@mui/material";
 
-import { controllerLayout } from "@/components/common/ListController/ListController.styles";
+import * as styles from "@/components/common/ListController/ListController.styles";
 
 interface ListControllerProps {
     pageCount: number,
@@ -11,7 +11,7 @@ interface ListControllerProps {
 }
 
 const ListController: FC<ListControllerProps> = ({ pageCount, current, onChange }) => (
-    <Box sx={controllerLayout}>
+    <Box sx={styles.controllerLayout}>
         {new Array<JSX.Element>(pageCount).fill(<></>)
             .map((el, i) =>
                 <Button variant={i + 1 === current ? "contained" : "text"}

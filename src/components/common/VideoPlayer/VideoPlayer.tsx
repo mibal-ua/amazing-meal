@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { Box } from "@mui/material";
 import Hls from "hls.js";
 
-import { videoPlayer } from "@/components/common/VideoPlayer/VideoPlayer.styles";
+import * as styles from "@/components/common/VideoPlayer/VideoPlayer.styles";
 
 interface VideoPlayerProps {
     source: string,
@@ -22,7 +22,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ source }) => {
 
     source = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"; // because of YouTube CORS politics
     return (
-        <Box sx={videoPlayer}>
+        <Box sx={styles.videoPlayer}>
             <video
                 width={"100%"}
                 controls={true}

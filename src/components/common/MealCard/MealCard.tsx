@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 
-import { card } from "./MealCard.styles";
+import * as styles from "./MealCard.styles";
 
 interface MealCardProps {
     name: string;
@@ -15,7 +15,7 @@ interface MealCardProps {
 }
 
 const MealCard: FC<MealCardProps> = ({ name, category, tags, image, link }) => (
-    <Card sx={card}>
+    <Card sx={styles.card}>
         <CardActionArea href={link}>
             <CardMedia component="img" height="140" image={image} alt={name} />
             <CardContent>

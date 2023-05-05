@@ -8,9 +8,8 @@ import Loading from "@/components/common/DataGettingCases/Loading";
 import MealInfo from "@/components/common/MealInfo";
 import MealInstructions from "@/components/common/MealInstructions";
 import PageMetadata from "@/components/common/PageMetadata";
-import { pageWrapper } from "@/components/pages/meal-page/MealPage.styles";
+import * as styles from "@/components/pages/meal-page/MealPage.styles";
 import MealService from "@/services/meal.service";
-import { Meal } from "@/types/services";
 
 const sliceObjIntoArrays = (srcObj: object, length: number) => {
     const src: string[] = Object.values(srcObj);
@@ -57,7 +56,7 @@ const MealPage = () => {
     const { ingredients, measures } = sliceObjIntoArrays(rest, 20);
     return (<>
         <PageMetadata title={strMeal} />
-        <Box sx={pageWrapper}>
+        <Box sx={styles.pageWrapper}>
             <MealInfo
                 name={strMeal}
                 image={strMealThumb}
