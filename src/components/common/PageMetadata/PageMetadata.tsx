@@ -5,9 +5,7 @@ interface PageMetadataProps {
     title: string;
 }
 
-const PageMetadata: FC<PageMetadataProps> = ({
-    title
-}) => (
+const PageMetadata: FC<PageMetadataProps> = ({ title }) => (
     <Head>
         <title>{title}</title>
         <link rel="shortcut icon" href="/chicken.png" />

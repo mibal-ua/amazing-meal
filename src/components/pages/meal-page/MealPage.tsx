@@ -36,7 +36,7 @@ const MealPage = () => {
         <Loading />
     </>);
 
-    const meal = data?.meals?.[0] as Meal;
+    const meal = data?.meals?.[0];
     if (isError || !meal) return (<>
         <PageMetadata title="Помилка" />
         <Error message="Їжу з'їли((" />
