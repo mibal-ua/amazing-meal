@@ -3,9 +3,9 @@ import {Box, CircularProgress, Typography} from '@mui/material';
 import {useQuery} from 'react-query';
 import MealService from '@/services/meal.service';
 import {useRouter} from 'next/router';
-import MealInfo from '@/components/common/MealInfo/MealInfo';
+import MealInfo from '@/components/common/MealInfo';
 import {loadingWrapper, pageWrapper} from '@/components/pages/meal-page/MealPage.styles';
-import MealInstructions from '@/components/common/MealInstructions/MealInstructions';
+import MealInstructions from '@/components/common/MealInstructions';
 import {Meal} from '@/types/services';
 import Head from 'next/head';
 
