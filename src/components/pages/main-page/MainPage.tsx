@@ -1,11 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { Box, CircularProgress } from "@mui/material";
-import Head from "next/head";
+import { Box } from "@mui/material";
 
+import Error from "@/components/common/DataGettingCases/Error";
+import Loading from "@/components/common/DataGettingCases/Loading";
 import MealCardList from "@/components/common/MealCardList";
-import { loadingWrapper, pageWrapper } from "@/components/pages/main-page/MainPage.styles";
+import * as styles from "@/components/pages/main-page/MainPage.styles";
 import MealService from "@/services/meal.service";
+
+import PageMetadata from "../../common/PageMetadata";
 
 const MainPage = () => {
 
@@ -14,23 +17,20 @@ const MainPage = () => {
         MealService.getAllMeals
     );
 
-    if (isLoading || isError) return (<>
-        <Head>
-            <title>Loading...</title>
-            <link rel="shortcut icon" href="/chicken.png" />
-        </Head>
-        <Box sx={loadingWrapper}>
-            <CircularProgress size={100} />
-        </Box>
+    if (isLoading) return (<>
+        <PageMetadata title="Загрузка..." />
+        <Loading />
+    </>);
+
+    if (isError || !data) return (<>
+        <PageMetadata title="Помилка" />
+        <Error message="Їжу з'їли((" />
     </>);
 
     return (<>
-        <Head>
-            <title>Amazing meal</title>
-            <link rel="shortcut icon" href="/chicken.png" />
-        </Head>
-        <Box sx={pageWrapper}>
-            <MealCardList list={data?.meals} />
+        <PageMetadata title="Неймовірна їжа" />
+        <Box sx={styles.pageWrapper}>
+            <MealCardList list={data.meals} />
         </Box>
     </>);
 };

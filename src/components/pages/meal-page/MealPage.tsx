@@ -1,15 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { Box, CircularProgress, Typography } from "@mui/material";
-import Head from "next/head";
+import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 
+import Error from "@/components/common/DataGettingCases/Error";
+import Loading from "@/components/common/DataGettingCases/Loading";
 import MealInfo from "@/components/common/MealInfo";
 import MealInstructions from "@/components/common/MealInstructions";
-import {
-    loadingWrapper,
-    pageWrapper,
-} from "@/components/pages/meal-page/MealPage.styles";
+import PageMetadata from "@/components/common/PageMetadata";
+import { pageWrapper } from "@/components/pages/meal-page/MealPage.styles";
 import MealService from "@/services/meal.service";
 import { Meal } from "@/types/services";
 
@@ -17,7 +16,7 @@ const sliceObjIntoArrays = (srcObj: object, length: number) => {
     const src: string[] = Object.values(srcObj);
     return {
         ingredients: src.slice(0, length),
-        measures: src.slice(length, length * 2),
+        measures: src.slice(length, length * 2)
     };
 };
 
@@ -29,34 +28,16 @@ const MealPage = () => {
         MealService.getCurrentMeal(mealId)
     );
 
-    if (isLoading || isError)
-        return (
-            <>
-                <Head>
-                    <title>Loading...</title>
-                    <link rel="shortcut icon" href="/chicken.png" />
-                </Head>
-                <Box sx={loadingWrapper}>
-                    <CircularProgress size={100} />
-                </Box>
-            </>
-        );
+    if (isLoading) return (<>
+        <PageMetadata title="Загрузка..." />
+        <Loading />
+    </>);
 
     const meal = data?.meals?.[0] as Meal;
-    if (!meal)
-        return (
-            <>
-                <Head>
-                    <title>Oops(</title>
-                    <link rel="shortcut icon" href="/chicken.png" />
-                </Head>
-                <Box sx={pageWrapper}>
-                    <Typography variant="h4" align="center">
-                        Такої їжі немає(
-                    </Typography>
-                </Box>
-            </>
-        );
+    if (isError || !meal) return (<>
+        <PageMetadata title="Помилка" />
+        <Error message="Їжу з'їли((" />
+    </>);
 
     const {
         idMeal,
@@ -70,29 +51,23 @@ const MealPage = () => {
         ...rest
     } = meal;
     const { ingredients, measures } = sliceObjIntoArrays(rest, 20);
-    return (
-        <>
-            <Head>
-                <title>{strMeal}</title>
-                <link rel="shortcut icon" href="/chicken.png" />
-            </Head>
-            <Box sx={pageWrapper}>
-                <MealInfo
-                    key={idMeal}
-                    name={strMeal}
-                    image={strMealThumb}
-                    category={strCategory}
-                    tags={strTags}
-                />
-                <MealInstructions
-                    instructions={strInstructions}
-                    ingredients={ingredients}
-                    measures={measures}
-                    video={strYoutube}
-                />
-            </Box>
-        </>
-    );
+    return (<>
+        <PageMetadata title={strMeal} />
+        <Box sx={pageWrapper}>
+            <MealInfo
+                name={strMeal}
+                image={strMealThumb}
+                category={strCategory}
+                tags={strTags}
+            />
+            <MealInstructions
+                instructions={strInstructions}
+                ingredients={ingredients}
+                measures={measures}
+                video={strYoutube}
+            />
+        </Box>
+    </>);
 };
 
 export default MealPage;
