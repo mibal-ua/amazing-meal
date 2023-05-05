@@ -24,8 +24,12 @@ const MealPage = () => {
     const router = useRouter();
     const mealId = router.query.mealId as string;
 
-    const { data, isLoading, isError } = useQuery(["meal", mealId], () =>
-        MealService.getCurrentMeal(mealId)
+    const { data, isLoading, isError } = useQuery(
+        ["meal", mealId],
+        () => MealService.getCurrentMeal(mealId),
+        {
+            refetchOnWindowFocus: false
+        }
     );
 
     if (isLoading) return (<>

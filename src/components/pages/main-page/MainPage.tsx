@@ -14,7 +14,10 @@ const MainPage = () => {
 
     const { data, isLoading, isError } = useQuery(
         "meals",
-        MealService.getAllMeals
+        MealService.getAllMeals,
+        {
+            refetchOnWindowFocus: false
+        }
     );
 
     if (isLoading) return (<>
