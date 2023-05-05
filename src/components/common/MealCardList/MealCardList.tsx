@@ -15,8 +15,8 @@ const MealCardList: FC<MealCardListProps> = ({ list }) => {
 
     return (<>
         <Box sx={styles.upperLayout}>
-            <Typography variant="h2">Страви</Typography>
-            <Pagination
+            <Typography sx={styles.typography} variant="h2">Страви</Typography>
+            <Pagination sx={styles.pagination}
                 color="primary"
                 count={pageCount}
                 page={currentPage}
