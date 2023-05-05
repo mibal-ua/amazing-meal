@@ -10,14 +10,7 @@ import MealInstructions from "@/components/common/MealInstructions";
 import PageMetadata from "@/components/common/PageMetadata";
 import * as styles from "@/components/pages/meal-page/MealPage.styles";
 import MealService from "@/services/meal.service";
-
-const sliceObjIntoArrays = (srcObj: object, length: number) => {
-    const src: string[] = Object.values(srcObj);
-    return {
-        ingredients: src.slice(0, length),
-        measures: src.slice(length, length * 2)
-    };
-};
+import { Utils } from "@/utils/utils";
 
 const MealPage = () => {
     const router = useRouter();
@@ -53,7 +46,8 @@ const MealPage = () => {
         strYoutube,
         ...rest
     } = meal;
-    const { ingredients, measures } = sliceObjIntoArrays(rest, 20);
+    const { ingredients, measures } = Utils.sliceObjIntoArrays(rest, 20);
+
     return (<>
         <PageMetadata title={strMeal} />
         <Box sx={styles.pageWrapper}>
