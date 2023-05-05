@@ -17,7 +17,10 @@ interface MealCardProps {
 const MealCard: FC<MealCardProps> = ({ name, category, tags, image, link }) => (
     <Card sx={styles.card}>
         <CardActionArea href={link}>
-            <CardMedia component="img" height="140" image={image} alt={name} />
+            <CardMedia sx={styles.image}
+                component="img"
+                image={image}
+                alt={name} />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                     {name}
