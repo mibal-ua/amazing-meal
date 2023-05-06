@@ -34,14 +34,14 @@ const MealInstructions: FC<MealInstructionsProps> = ({
                     ))}
                 </List>
             </Box>
-            <Box sx={styles.rightPart}>
-                <Box sx={styles.block}>
+            <Box sx={styles.instructions}>
+                <Box sx={styles.dataBlock}>
                     <Typography sx={styles.h4} variant="h4">Інструкція:</Typography>
                     <Typography sx={styles.body1} variant="body1">
                         {instructions}
                     </Typography>
                 </Box>
-                <Box sx={styles.block}>
+                <Box sx={styles.dataBlock}>
                     <Typography sx={styles.h4} variant="h4">Відео-гайд</Typography>
                     <VideoPlayer source={video} />
                 </Box>

@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 import { SxProps } from "@mui/system";
 
-export const blockLayout: SxProps<Theme> = {
+export const main: SxProps<Theme> = {
     maxWidth: "1200px",
     margin: "0 auto",
     padding: "32px",
@@ -19,7 +19,7 @@ export const blockLayout: SxProps<Theme> = {
     },
 };
 
-export const imageStyle: SxProps<Theme> = {
+export const image: SxProps<Theme> = {
     maxHeight: "200px",
     maxWidth: "200px",
     borderRadius: "6px",

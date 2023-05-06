@@ -19,13 +19,13 @@ export const layout: SxProps<Theme> = {
     },
 };
 
-export const block: SxProps<Theme> = {
+export const dataBlock: SxProps<Theme> = {
     display: "flex",
     flexDirection: "column",
     gap: "8px",
 };
 
-export const rightPart: SxProps<Theme> = {
+export const instructions: SxProps<Theme> = {
     display: "flex",
     flexDirection: "column",
     gap: "32px",
