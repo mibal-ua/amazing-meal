@@ -22,12 +22,12 @@ const MealInstructions: FC<MealInstructionsProps> = ({
 
     return (
         <Box sx={styles.layout}>
-            <Box sx={styles.leftPart}>
-                <Typography variant="h4">Інгредієнти:</Typography>
+            <Box sx={styles.ingredients}>
+                <Typography sx={styles.h4} variant="h4">Інгредієнти:</Typography>
                 <List>
                     {filteredIngredients.map((value, index) => (
-                        <ListItem key={value}>
-                            <ListItemText
+                        <ListItem key={value} sx={styles.body1}>
+                            <ListItemText primaryTypographyProps={{sx: styles.body1}}
                                 primary={`${index + 1}. ${value} (${filteredMeasures[index]})`}
                             />
                         </ListItem>
@@ -36,13 +36,13 @@ const MealInstructions: FC<MealInstructionsProps> = ({
             </Box>
             <Box sx={styles.rightPart}>
                 <Box sx={styles.block}>
-                    <Typography variant="h4">Інструкція:</Typography>
-                    <Typography width="matching-parent" variant="body1">
+                    <Typography sx={styles.h4} variant="h4">Інструкція:</Typography>
+                    <Typography sx={styles.body1} variant="body1">
                         {instructions}
                     </Typography>
                 </Box>
                 <Box sx={styles.block}>
-                    <Typography variant="h4">Відео-гайд</Typography>
+                    <Typography sx={styles.h4} variant="h4">Відео-гайд</Typography>
                     <VideoPlayer source={video} />
                 </Box>
             </Box>
